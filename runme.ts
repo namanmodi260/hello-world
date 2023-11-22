@@ -1,10 +1,6 @@
-// open-ai-prompt.ts 
 
-import { unpack } from './unpack';
+import { route } from './router';
 
 export const entry = (event) => {
-  
-  let event = unpack(event);
-  
-
+  return route(event)
 }
