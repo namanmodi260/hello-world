@@ -7,7 +7,6 @@ import { IncomingHttpHeaders } from 'http';
 // dotenv.config();
 
 const ROUTE_TABLE = process.env.C1_ROUTE_TABLE_PREFIX;
-// const LOG_WRITES = process.env.C1_REDIS_LOG_STREAM;
 
 export const log = {
     error: (...data: any) => {
