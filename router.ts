@@ -215,6 +215,10 @@ export const route = async (event) => {
         let forwardResponse = await forwardPromise;
         let statusCode = forwardResponse[0];
         let responseData = forwardResponse[1];
+        responseData.headers["Content-Type"] = "text/html",
+        responseData.headers["Access-Control-Allow-Origin"] = "*", // Specify the requesting origin
+        responseData.headers["Access-Control-Allow-Methods"] = "GET",
+        responseData.headers["Access-Control-Allow-Headers"] = "Content-Type"
         return {
             statusCode: statusCode,
             headers: responseData.headers || { 'Content-Type': 'application/json' },
