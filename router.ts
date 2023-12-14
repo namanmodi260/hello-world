@@ -64,7 +64,10 @@ export const forwardToUrl = async (event, url: string): Promise< (number | { bod
     try {
         // Extracting headers, query parameters, and body from the event
         const { headers, queryStringParameters, body } = event;
-
+       headers["Content-Type"] = "text/html";
+       headers["Access-Control-Allow-Origin"] = "http://localhost:3000";// Specify the requesting origin
+       headers["Access-Control-Allow-Methods"] = "GET",
+       headers["Access-Control-Allow-Headers"] =  "Content-Type"
         // Adding query parameters to the URL, if any
         const urlWithParams = new URL(url);
         if (queryStringParameters) {
