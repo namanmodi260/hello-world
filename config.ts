@@ -6,10 +6,6 @@ const REDIS_HOST = process.env.REDIS_HOST;
 const REDIS_PORT = process.env.REDIS_PORT;
 const REDIS_PASSWORD = process.env.REDIS_PASSWORD;
 
-if (!REDIS_HOST || !REDIS_PORT || !REDIS_PASSWORD) {
-    throw new Error("Required Redis environment variables are missing");
-}
-
 const redis = new redisCli({
     host: REDIS_HOST,
     port: Number(REDIS_PORT),
