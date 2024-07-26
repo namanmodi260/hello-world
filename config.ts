@@ -1,9 +1,6 @@
 import { log } from './router';
 import redisCli from 'ioredis';
-import { config } from 'dotenv';
 
-// Load environment variables from .env file
-config();
 
 const REDIS_HOST = process.env.REDIS_HOST;
 const REDIS_PORT = process.env.REDIS_PORT;
